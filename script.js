@@ -1,8 +1,3 @@
-let gridSize = 16;
-let cells = [];
-
-const grid = document.querySelector("#grid");
-
 function drawGrid() {
     //To remove all child elements (necessary when redrawing graph)
     while (grid.firstChild) {
@@ -36,14 +31,27 @@ function getUserEntry() {
     }
 }
 
+function getRandomColorFormatted(){
+    let randomNums = [];
+    for (let i = 0; i < 3; i++){
+        randomNums[i] = Math.floor(Math.random() * 1000) % 255;
+    }
+    console.log(`${randomNums[0]}, ${randomNums[1]}, ${randomNums[2]}`);
+    return `rgb(${randomNums[0]}, ${randomNums[1]}, ${randomNums[2]})`;
+}
+
+let gridSize = 16;
+let cells = [];
+
+const grid = document.querySelector("#grid");
 grid.addEventListener("mouseover", (event) => {
-    event.target.classList.add("hover");
+    //event.target.classList.add("hover");
+    event.target.style["background-color"] = getRandomColorFormatted();
 });
 
 const userBtn = document.querySelector("button");
 userBtn.addEventListener("click", () =>{
     getUserEntry();
 });
-
 
 drawGrid();
