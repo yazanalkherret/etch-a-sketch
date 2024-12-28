@@ -12,3 +12,7 @@ body {
     background-color: white;
     border: 1px solid lightgrey;
 }
+
+.cell.hover {
+    background-color: darkcyan;
+}

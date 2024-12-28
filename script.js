@@ -15,7 +15,12 @@ for(let i = 0; i < gridSize; i++){
         cells[i][j] = document.createElement("div");
         cells[i][j].setAttribute("class", "cell");
         cells[i][j].style["height"] = cellSize + "px";
-        cells[i][j].style["width"] = cellSize + "px";
+        cells[i][j].style["width"] = cellSize + "px";        
         grid.appendChild(cells[i][j]);
     }
+
 }
+
+grid.addEventListener("mouseover", (event)=>{
+    event.target.classList.add("hover");
+});
