@@ -45,7 +45,6 @@ let cells = [];
 
 const grid = document.querySelector("#grid");
 grid.addEventListener("mouseover", (event) => {
-    //event.target.classList.add("hover");
     event.target.style["background-color"] = getRandomColorFormatted();
 });
 
